@@ -1,0 +1,190 @@
+/* --------About Us------ */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .aboutus-header {
+    background-image: url(../assets/image/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding: 0 80px;
+    height: 280px;
+    width: 100%;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .aboutus-layout span {
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+    display: inline-block;
+    opacity: 0; 
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1.5s ease-out forwards;
+    animation-delay: 0.5s; 
+  }
+  
+  .aboutus-layout label {
+    color: #000;
+    font-size: 25px;
+    font-weight: 900;
+    display: inline-block;
+    opacity: 0; 
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1.5s ease-out forwards;
+    animation-delay: 0.5s; 
+  }
+  
+  .aboutus-card {
+    background-color: #fff;
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0; 
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1.5s ease-out forwards;
+    animation-delay: 0.2s; 
+  }
+  
+  .Responsiveimg {
+    height: 440px;
+    width: 500px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: all 0.4s ease-in-out; 
+  }
+  
+  .Responsiveimg:hover {
+    box-shadow: 0 8px 20px rgba(148, 53, 148, 0.5); 
+  }  
+  
+  .aboutus-icon {
+    color: #000;
+    font-size: 20px;
+  }
+  
+  .aboutus-icon:hover {
+    color: rgb(148, 53, 148);
+    font-weight: 22px;
+  }
+  /* ---career------- */
+  .career-container {
+    position: relative; 
+    background-image: url(../assets/image/hands.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+  }
+  
+  .career-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; 
+  }
+  
+  .career-layout {
+    padding: 0 50px;
+    z-index: 2;
+  }
+  
+  .career-card {
+    background-color: #fff;
+    padding: 40px 20px 40px 30px;
+    margin: 5px 0;
+    border-radius: 20px;
+    opacity: 0; 
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+    border-left: 10px solid #a30fb4;
+    border-bottom: 10px solid #a30fb4;
+    z-index: 2; 
+  }
+  .career-container span {
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+    display: inline-block;
+    opacity: 0; 
+    transform: translateX(-100%); 
+    animation: slideInFromLeft 1.5s ease-out forwards; 
+    animation-delay: 0.5s; 
+  }
+  .career-box{
+    background: #fff;
+    padding: 40px 0;
+  }
+  .career-box label {
+    color: #000;
+    font-size: 24px;
+    font-weight: 900;
+    display: inline-block;
+    opacity: 0; 
+    transform: translateX(-100%); 
+    animation: slideInFromLeft 1.5s ease-out forwards; 
+    animation-delay: 0.5s;
+    margin-bottom: 5px; 
+  }
+  .career-box span {
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+    display: inline-block;
+    opacity: 0; 
+    transform: translateX(-100%); 
+    animation: slideInFromLeft 1.5s ease-out forwards; 
+    animation-delay: 0.5s; 
+  }
+
+  @media (max-width: 678px) {
+    .aboutus-header {
+      height: 80px;
+      padding: 0 40px;
+      height: 180px;
+      font-size: 30px;
+    }
+  
+    .aboutus-card {
+      padding: 20px;
+    }
+  
+    .Responsiveimg {
+      height: 300px;
+      width: 350px;
+    }
+  
+    .aboutus-layout span {
+      font-size: 18px;
+    }
+    .aboutus-layout label {
+      font-size: 20px;
+    }
+    /* ------career---- */
+    .career-layout {
+      padding: 0 20px;
+    }
+
+  }
+  

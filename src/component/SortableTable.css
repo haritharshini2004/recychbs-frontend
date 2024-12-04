@@ -1,0 +1,164 @@
+/* SORTABLE TABLES */
+  
+.dataTable {
+    float: left;
+}
+
+.table-sorting {
+    padding: 0;
+    position: relative;
+    font-size: 12px;
+    /* background-color: #FFF; */
+}
+
+.table-sorting .dataTables_wrapper {
+    width: 100%;
+}
+
+.table-sorting .dataTables_length {
+    font-size: 11px;
+    color: #333;
+    line-height: 16px;
+    width: 150px;
+    float: left;
+    padding: 5px;
+}
+
+.table-sorting .dataTables_length label,
+.table-sorting .dataTables_filter label {
+    font-size: 11px;
+    color: #333;
+    padding: 0;
+    line-height: 16px;
+    margin: 0;
+}
+
+.table-sorting .dataTables_length label select {
+    padding: 3px 2px;
+    font-size: 11px;
+    color: #333;
+}
+
+.table-sorting .dataTables_filter {
+    font-size: 11px;
+    color: #333;
+    line-height: 16px;
+    width: 150px;
+    float: right;
+    padding: 5px;
+}
+
+.table-sorting .dataTables_filter label input[type="text"] {
+    font-size: 11px;
+    padding: 3px 5px;
+    color: #333;
+    width: 90px;
+    height: 30px; /* Adjusted height for better alignment */
+}
+
+.table-sorting .table {
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-sorting .table td.dataTables_empty {
+    font-size: 11px;
+    text-align: center;
+    color: #333;
+}
+
+.table-sorting .dataTables_info {
+    float: left;
+    font-size: 11px;
+    color: #333;
+    padding: 8px 10px;
+    line-height: 16px;
+}
+
+.table-sorting .dataTables_paginate {
+    padding: 5px;
+    text-align: right;
+    float: right;
+}
+
+.table-sorting .dataTables_paginate a,
+.table-sorting .dataTables_paginate button {
+    padding: 5px 8px; /* Increased padding for better touch targets */
+    margin-left: 5px; /* Consistent spacing between buttons */
+    font-size: 11px;
+    color: #333;
+    border: 1px solid #DDD;
+    background: #F1F1F1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.table-sorting .dataTables_paginate a:hover,
+.table-sorting .dataTables_paginate button:hover {
+    background: #E1E1E1;
+}
+
+.table-sorting .dataTables_paginate a.paginate_disabled_previous,
+.table-sorting .dataTables_paginate a.paginate_disabled_next,
+.table-sorting .dataTables_paginate a.paginate_button_disabled {
+    cursor: default;
+    color: #ccc;
+}
+
+.table-sorting .paginate_active {
+    color: #FFF !important;
+    border: 1px solid #777;
+    background: #858585;
+}
+
+.table-sorting {
+    overflow-x: auto; /* Allow horizontal scrolling */
+  }
+  
+  .table {
+    width: 100%; /* Make the table width 100% of its container */
+    border-collapse: collapse; /* Merge borders */
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px; /* Add some padding */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .table th {
+    background-color: #f8f9fa; /* Light background for headers */
+  }
+  
+  @media (max-width: 768px) {
+    .table th,
+    .table td {
+      display: block; /* Stack items */
+      width: 100%; /* Full width */
+    }
+    .table thead {
+      display: none; /* Hide the header in mobile view */
+    }
+    .table tr {
+      margin-bottom: 10px; /* Add some space between rows */
+      border: 1px solid #ccc; /* Add border to each row */
+    }
+    .table td {
+      text-align: right; /* Align text to the right for cells */
+      position: relative; /* Position relative for pseudo-elements */
+      padding-left: 50%; /* Create space for labels */
+    }
+    .table td::before {
+      content: attr(data-label); /* Use data-label for mobile */
+      position: absolute; /* Position absolute */
+      left: 10px; /* Space from left */
+      width: calc(50% - 10px); /* Width of label */
+      padding-right: 10px; /* Space from right */
+      white-space: nowrap; /* Prevent wrapping */
+      text-align: left; /* Align to left */
+      font-weight: bold; /* Bold label */
+    }
+  }
+  

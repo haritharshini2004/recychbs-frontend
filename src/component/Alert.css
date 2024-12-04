@@ -1,0 +1,112 @@
+.alert {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    position: fixed; /* Position relative to the viewport */
+    top: 10px; /* Distance from the top of the viewport */
+    right: 10px; /* Distance from the right of the viewport */
+    z-index: 1000; /* Ensure it appears above other elements */
+    max-width: calc(100% - 20px); /* Responsive width */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    animation: jump-in 0.5s ease; /* Jump in animation */
+}
+
+@keyframes jump-in {
+    0% { transform: translateY(-30px); opacity: 0; } /* Start above and transparent */
+    50% { opacity: 1; } /* Midway point */
+    100% { transform: translateY(0); } /* End at the original position */
+}
+
+.alert-exit {
+    animation: jump-out 0.5s ease forwards; /* Use forwards to retain final state */
+}
+
+@keyframes jump-out {
+    0% { opacity: 1; } /* Start fully visible */
+    50% { transform: translateY(-20px); opacity: 0.5; } /* Jump up and fade */
+    100% { opacity: 0; } /* Fade out */
+}
+
+.alert-success {
+    background-color: #e1f5ea;
+    color: #2e7d32;
+}
+
+.alert-error {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.alert-info {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.alert-loading {
+    background-color: white;
+    color: #3498db; /* Color for loading text */
+}
+
+.alert-icon {
+    margin-right: 10px;
+    position: relative; /* Keep relative positioning */
+}
+
+.alert-message {
+    flex-grow: 1; /* Allow message to take available space */
+    font-size: 1rem; /* Base font size */
+    line-height: 1.5; /* Line height for readability */
+    overflow-wrap: break-word; /* Ensure long words wrap */
+    margin-right: 40px; /* Add right margin to prevent overlap with the close button */
+}
+
+.alert-close {
+    position: absolute;
+    right: 10px;
+    top: 50%; /* Center the close button vertically */
+    transform: translateY(-50%); /* Adjust to center */
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.loading-spinner {
+    display: inline-block; /* Ensure correct display */
+    width: 20px; /* Size of the spinner */
+    height: 20px; /* Size of the spinner */
+    border-radius: 50%; /* Make it circular */
+    animation: spin 1s linear infinite; /* Add spinning animation */
+    margin-right: 2px; /* Space between spinner and message */
+    position: relative; /* Change to relative positioning */
+    top: 50%; /* Center vertically relative to the alert */
+    transform: translateY(-50%); /* Adjust to center */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .alert {
+        width: calc(100% - 20px); 
+        margin: 0; /* Remove margin */
+    }
+
+    .alert-message {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+
+    .alert-close {
+        font-size: 18px; /* Slightly smaller close button */
+    }
+
+    .loading-spinner {
+        width: 15px; /* Smaller spinner for mobile */
+        height: 15px; /* Smaller spinner for mobile */
+    }
+}

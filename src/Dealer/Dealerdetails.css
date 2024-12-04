@@ -1,0 +1,237 @@
+body {
+  background-color: #f0f0f0; /* Optional fallback color */
+  min-height: 100vh;
+  max-height: 100vh; /* Ensures the body takes at least the full viewport height */
+}
+
+.container-fluid-ts {
+  padding: 20px;
+  position: relative; /* Allows for positioning of child elements */
+}
+
+.agentdetails {
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.877); /* Semi-transparent white */
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Allow stacking context */
+  z-index: 1; /* Ensure it sits above the background */
+}
+
+/* Background for the container */
+.container-fluid-ts::before {
+  content: '';
+  background-image: url('../assets/image/background.jpg'); /* Update with the correct path */
+  background-size: cover; /* Adjusts the image to cover the entire background */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  position: absolute; /* Positions it relative to the container */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0; /* Sends it to the back */
+}
+
+.submit-button1.disabled {
+  pointer-events: none;
+  background-color: #ccc; 
+  color: #666; 
+}
+
+.submit-button1 {
+  background-color: #337ab7;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto; /* Center align */
+  width: 100%; 
+  margin-bottom: 20px; 
+}
+
+.submit-button1:hover {
+  background-color: #23527c;
+}
+
+
+/* General styling for the date picker */
+.datepicker-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Input field styling */
+.datepicker-input {
+  padding: 10px;
+  border: 1px solid ;
+  border-radius: 5px;
+  width: 100%;
+  margin-right: 10px; /* Space between input and icon */
+}
+
+/* Calendar icon styling */
+.calendar_icon {
+  cursor: pointer;
+  color: #337ab7; /* Match the theme color */
+  font-size: 1.2em;
+}
+
+
+/* Style for the month dropdown */
+.react-datepicker__month-dropdown {
+  background-color: white; /* Background color */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style for the year dropdown */
+.react-datepicker__year-dropdown {
+  background-color: white; /* Background color */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style for the dropdown items */
+.react-datepicker__month-option,
+.react-datepicker__year-option {
+  padding: 8px 10px; /* Padding for dropdown items */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect for dropdown items */
+.react-datepicker__month-option:hover,
+.react-datepicker__year-option:hover {
+  background-color: #f0f0f0; /* Light grey on hover */
+}
+
+/* Style for the current month and year option */
+.react-datepicker__month-option--selected,
+.react-datepicker__year-option--selected {
+  background-color: #337ab7; /* Selected option background */
+  color: white; /* Selected option text color */
+}
+
+.datepicker-input.error {
+  border: 2px solid red; /* Set the border color to red for errors */
+}
+
+.indexedStep {
+  color: rgb(190, 190, 190);
+  width: 50px;
+  height: 50px;
+  font-size: 12px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(206, 206, 206);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.indexedStep.active {
+  background-color: #337ab7; /* Active color */
+  color: white;
+}
+
+.indexedStep.accomplished {
+  background-color: #4caf50; /* Completed color */
+  color: white;
+  border-style: none;
+}
+
+.RSPBprogressBar {
+  height: 3px;
+  width: 80%; /* Adjust as necessary */
+  margin: 20px auto;
+  position: relative;
+  background-color: rgb(207, 207, 207);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  margin-bottom: 70px;
+}
+
+.RSPBprogressBar .RSPBstep {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition-property: all;
+  transition-timing-function: ease;
+}
+
+.RSPBprogressBar .RSPBprogressBarText {
+  color: black; /* Set title color to black */
+  font-size: 14px;
+  position: absolute;
+  top: 40px; /* Adjust based on your design */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.RSPBstep {
+  position: absolute;
+  transition-property: all;
+  transition-timing-function: ease;
+}
+.RSPBline {
+  position: absolute;
+  height: 2px; /* Height of the line */
+  background-color: rgb(207, 207, 207); /* Line color */
+  top: 50%; /* Center the line vertically */
+  z-index: -1; /* Make sure it's behind the circles */
+  transform: translateY(-50%); /* Center the line vertically */
+  width: 25%; /* This should match the distance between steps */
+}
+
+
+
+.RSPBprogressBar .RSPBprogression {
+  position: absolute;
+  transition: width 0.3s ease;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background: #664de5; /* Progress color */
+  z-index: -1;
+}
+
+@media screen and (max-width: 480px) {
+  .indexedStep {
+      width: 25px;
+      height: 25px;
+      font-size: 15px;
+  }
+}
+
+.indexedStep {
+  color: black;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexedStep.accomplished {
+  background-color: rgba(0, 116, 217, 1);
+  color: white;
+}

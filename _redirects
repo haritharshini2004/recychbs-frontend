@@ -1,0 +1,2 @@
+# Redirect all routes to index.html to support client-side routing
+/*    /index.html   200
