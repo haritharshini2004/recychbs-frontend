@@ -71,6 +71,7 @@ import LocationTesting from './Dealer/locationTesting';
 import NearbyUsers from './Dealer/nearbyUsers';
 import PhoneAuth from './screen/PhoneAuth';
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics as Ana } from "@vercel/analytics/react"
 
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
   return (
     <>
     <SpeedInsights/>
+    <Ana/> 
       <AuthProvider>
       <BrowserRouter>
         <Routes>
