@@ -70,12 +70,14 @@ import Base64Testing2 from './Dealer/Base64Testing2';
 import LocationTesting from './Dealer/locationTesting';
 import NearbyUsers from './Dealer/nearbyUsers';
 import PhoneAuth from './screen/PhoneAuth';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 
 function App() {
 
   return (
     <>
+    <SpeedInsights/>
       <AuthProvider>
       <BrowserRouter>
         <Routes>
