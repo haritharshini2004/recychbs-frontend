@@ -31,7 +31,7 @@ const Dealereditdetail = () => {
         return cookieValue;
     }
     try {
-      const response = await fetch('https://www.recychbsadmin.in/updateDealerDetails/', {
+      const response = await fetch('https://recychbs-backend.onrender.com/updateDealerDetails/', {
         method: 'POST', // or 'PUT' depending on your backend logic
         credentials: "include",
         headers: {
@@ -60,7 +60,7 @@ const Dealereditdetail = () => {
   useEffect(() => {
     const fetchDealerDetails = async () => {
       try {
-        const response = await fetch('https://www.recychbsadmin.in/fetchDealerEditDetails/');
+        const response = await fetch('https://recychbs-backend.onrender.com/fetchDealerEditDetails/');
         const dealer_data = await response.json();
         
         const data = {

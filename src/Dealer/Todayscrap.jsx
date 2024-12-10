@@ -24,7 +24,7 @@ function Todayscrap() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://www.recychbsadmin.in/Get-Scrap-Type/')
+    fetch('https://recychbs-backend.onrender.com/Get-Scrap-Type/')
       .then(response => response.json())
       .then(data =>{ 
         setData(data);

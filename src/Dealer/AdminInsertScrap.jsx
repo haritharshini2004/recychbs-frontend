@@ -164,7 +164,7 @@ const handleSubmit = async (e) => {
     }
 
   try {
-    const response = await fetch('https://www.recychbsadmin.in/InsertScrap/', {
+    const response = await fetch('https://recychbs-backend.onrender.com/InsertScrap/', {
       method: 'POST',
       credentials: 'include', // Ensures cookies are sent
       body: uploadFile,

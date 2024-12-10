@@ -12,7 +12,7 @@ const Dealernotification = () => {
 
   useEffect(() => {
     // fetch('http://127.0.0.1:8000/Get_UserNotification/')
-    fetch('https://www.recychbsadmin.in/Get_Notification/')
+    fetch('https://recychbs-backend.onrender.com/Get_Notification/')
       .then(response => response.json())
       .then(data => {
         console.log(data);

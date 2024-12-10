@@ -48,7 +48,7 @@ function Homeuser() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://www.recychbsadmin.in/User_Scrap_Type/')
+    fetch('https://recychbs-backend.onrender.com/User_Scrap_Type/')
       .then(response => response.json())
       .then(data =>{ 
         setData(data);

@@ -25,7 +25,7 @@ const NearbyUsers = () => {
         const fetchNearbyUsers = async () => {
             try {
                 // const response = await fetch('http://127.0.0.1:8000/nearby-users/', {
-                const response = await fetch('https://www.recychbsadmin.in/nearbyUsers/', {
+                const response = await fetch('https://recychbs-backend.onrender.com/nearbyUsers/', {
                     credentials: 'include',
                     headers: {
                       'Content-Type': 'application/json',

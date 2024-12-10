@@ -7,7 +7,7 @@ const DisplayUploadedFile = () => {
   const fetchAndDisplayFile = async () => {
     try {
       // const response = await fetch('http://127.0.0.1:8000/get-file/');
-      const response = await fetch('https://www.recychbsadmin.in/get-file/');
+      const response = await fetch('https://recychbs-backend.onrender.com/get-file/');
       const fileData = await response.json();
 
       // Create a Blob from the base64 string and generate a URL for the image

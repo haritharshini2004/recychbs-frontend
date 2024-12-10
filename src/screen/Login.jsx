@@ -150,7 +150,7 @@ const handleBlur = (e) => {
       loginType: activeLogin
     };
     setLoading(true);
-    fetch('https://www.recychbsadmin.in/login-form/', {
+    fetch('https://recychbs-backend.onrender.com/login-form/', {
       method: 'POST',
       credentials: 'include',
       headers: {

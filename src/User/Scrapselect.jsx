@@ -15,7 +15,7 @@
 //   const navigate = useNavigate();
 
 //   useEffect(() => {
-//     fetch('https://www.recychbsadmin.in/SelectScrap/')
+//     fetch('https://recychbs-backend.onrender.com/SelectScrap/')
 //       .then(response => response.json())
 //       .then(data => setData(data))
 //       .catch(error => console.error('Error fetching data:', error));
@@ -60,7 +60,7 @@
 //     const csrfToken = getCookie('csrftoken');
 
 //     try {
-//       const response = await fetch('https://www.recychbsadmin.in/ScrapSelection/', {
+//       const response = await fetch('https://recychbs-backend.onrender.com/ScrapSelection/', {
 //         method: "POST",
 //         body: formData,
 //         credentials: "include",
@@ -193,7 +193,7 @@ const Scrapselect = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://www.recychbsadmin.in/User_Scrap_Type/')
+    fetch('https://recychbs-backend.onrender.com/User_Scrap_Type/')
       .then(response => response.json())
       .then(data =>{ 
         setData(data);
@@ -344,7 +344,7 @@ console.log(scrapDetail);
       // Send the form data to the server
       const response = await fetch(
         // 'http://localhost:8000/ScrapSelection/',
-        'https://www.recychbsadmin.in/ScrapSelection/',
+        'https://recychbs-backend.onrender.com/ScrapSelection/',
         {
           method: "POST",
           body: formData,

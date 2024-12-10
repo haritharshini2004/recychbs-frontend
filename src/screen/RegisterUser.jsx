@@ -271,7 +271,7 @@ const RegisterUser = () => {
         return cookieValue;
       }
    
-      fetch("https://www.recychbsadmin.in/register-form/", {
+      fetch("https://recychbs-backend.onrender.com/register-form/", {
      
         credentials: 'include', 
         method: "POST",

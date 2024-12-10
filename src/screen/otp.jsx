@@ -47,7 +47,7 @@
 //     e.preventDefault();
 //     const enteredOtp = otp.join("");
  
-//     fetch("https://www.recychbsadmin.in/otp/", {
+//     fetch("https://recychbs-backend.onrender.com/otp/", {
 //       method: "POST",
 //       credentials: "include",
 //       headers: {

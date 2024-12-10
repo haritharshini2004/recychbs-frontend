@@ -41,7 +41,7 @@ function BankAccountDetails() {
 
     try {
     //   const response = await fetch('http://localhost:8000/update-bank-account/', {
-      const response = await fetch('https://www.recychbsadmin.in/update-bank-account/', {
+      const response = await fetch('https://recychbs-backend.onrender.com/update-bank-account/', {
         method: 'POST',
         body: formData,  // Send FormData
       });
