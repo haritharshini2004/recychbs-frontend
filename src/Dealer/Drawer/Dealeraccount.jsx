@@ -8,7 +8,7 @@ const Dealeraccount = () => {
   useEffect(() => {
     const fetchDealerDetails = async () => {
       try {
-        const response = await fetch('https://recychbs-backend.onrender.com/fetchDealerEditDetails/');
+        const response = await fetch('http://127.0.0.1:8000/fetchDealerEditDetails/');
         const dealer_data = await response.json();
         const data = {
           name: dealer_data.name,

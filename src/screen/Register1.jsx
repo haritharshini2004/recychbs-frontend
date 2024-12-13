@@ -306,7 +306,7 @@ const Register1 = () => {
         return cookieValue;
       }
    
-      fetch("https://recychbs-backend.onrender.com/register-form/", {
+      fetch("http://127.0.0.1:8000/register-form/", {
      
         credentials: 'include', 
         method: "POST",

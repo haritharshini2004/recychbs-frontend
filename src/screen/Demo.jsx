@@ -287,7 +287,7 @@ export default Demo;
 //   loginType: activeLogin // Add secondVariable as a new field
 // };
  
-//     fetch('https://recychbs-backend.onrender.com/login-form/', {
+//     fetch('http://127.0.0.1:8000/login-form/', {
 //       // fetch('http://127.0.0.1:8000/login-form/ ', {
  
 //         method: 'POST',

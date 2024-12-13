@@ -31,7 +31,7 @@ const Headerdealer = () => {
                 src={logotrans}
                 alt="Logo"
                 style={{
-                  width: "40px",
+                  width: "50px",
                   height: "40px",
                 }}
               />
@@ -115,7 +115,7 @@ const Headerdealer = () => {
           <div
   className="headersection mobile-need header-fixed"
   style={{ flexDirection: "column" }}
->
+  >
   <div
     className="p-2"
     style={{
@@ -130,7 +130,7 @@ const Headerdealer = () => {
         src={logotrans}
         alt="Logo"
         style={{
-          width: "45px",
+          width: "55px",
           height: "45px",
           marginLeft: "20px",
           textAlign: "right", 

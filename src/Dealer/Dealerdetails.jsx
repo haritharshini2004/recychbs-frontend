@@ -438,7 +438,7 @@ for (const [key, fileData] of Object.entries(filesData)) {
     try {
       // Send the form data to the server
       const response = await fetch(
-        "https://recychbs-backend.onrender.com/dealer_details/",
+        "http://127.0.0.1:8000/dealer_details/",
         // "http://127.0.0.1:8000/dealer_details/",
         {
           method: "POST",

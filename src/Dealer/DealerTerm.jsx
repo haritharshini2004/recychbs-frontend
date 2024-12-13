@@ -1,17 +1,20 @@
+
+import Headerdealer from '../component/Headerdealer';
 function DealerTerm() {
     return (
         <>
+  <Headerdealer/>
             <div
-                className="container-fluid"
-                style={{
-                    backgroundColor: "#000",
-                    color: "#fff",
-                    paddingTop: "20px",
-                    fontSize: "17px",
-                    fontWeight: "200",
-                    paddingLeft: "30px",
-                    paddingRight: "30px"
-                }}
+                className="container-fluid topbottom"
+                // style={{
+                //     backgroundColor: "#000",
+                //     color: "#fff",
+                //     paddingTop: "20px",
+                //     fontSize: "17px",
+                //     fontWeight: "200",
+                //     paddingLeft: "30px",
+                //     paddingRight: "30px"
+                // }}
             >
                 <div
                     style={{

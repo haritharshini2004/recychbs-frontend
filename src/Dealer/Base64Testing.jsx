@@ -24,7 +24,7 @@ const FileUpload = () => {
   const sendFileToDjango = async (base64String) => {
     try {
       // const response = await fetch('http://127.0.0.1:8000/upload-file/', {
-      const response = await fetch('https://recychbs-backend.onrender.com/upload-file/', {
+      const response = await fetch('http://127.0.0.1:8000/upload-file/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

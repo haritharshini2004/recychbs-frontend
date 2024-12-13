@@ -1,140 +1,229 @@
-import { FaHome, FaUser, FaCheckCircle, FaClock, FaArrowLeft } from "react-icons/fa";
+import { CiSearch } from "react-icons/ci";
+import { FaHome, FaUser, FaCheckCircle, FaClock } from "react-icons/fa";
 import logo from "../assets/image/logotrans.png";
 import LocationDisplay from "./LocationDisplay";
 import { IoMenuSharp } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IoIosNotifications } from "react-icons/io";
-import React, { useEffect, useState } from "react";
-import { BiArrowToLeft, BiHelpCircle, BiSolidUserAccount } from "react-icons/bi";
+import React, { useState } from "react";
+import { BiHelpCircle, BiSolidUserAccount } from "react-icons/bi";
 import { FcFaq } from "react-icons/fc";
 import { LuLogOut } from "react-icons/lu";
 import { RiCustomerService2Line, RiListOrdered2 } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
-
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
-  const isHomeDealerPage = location.pathname === '/Homeuser';
-
-  const toggleDrawer = () => setDrawerOpen(!drawerOpen);
-
  
-  const handleLogout = () => {
-    // Clear authentication status
-    navigate("/");
-
-    // Prevent back navigation by modifying history
-    window.history.pushState(null, "", window.location.href);
-
-    // Disable the back button
-    window.onpopstate = function (event) {
-      window.history.pushState(null, "", window.location.href);
-    };
-  };
-
-  // Prevent default backspace behavior on the whole document
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Backspace") {
-        event.preventDefault();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
+  const toggleDrawer = () => setDrawerOpen(!drawerOpen);
+  const location = useLocation();
+ 
+    const shouldShowSearchBar = location.pathname === "/Homeuser" || location.pathname === "/Scrapselect";
+ 
   return (
     <>
-      <div className="container-fluid">
-        <div className="header-fixed">
-          <div className="headersection">
-            <div style={{ display: "flex", alignItems: "center" }}>
-              {!isHomeDealerPage && (
-                <FaArrowLeft onClick={() => navigate(-1)} className="back-button" />
-              )}
-              <div className="header-logo-part">
-                <img
-                  src={logo}
-                  style={{ height: "50px", width: "60px", margin: "0 5px" }}
-                  alt="logo"
-                />
-                <p className="header-logo-text m-0 p-0">RECYCHBS</p>
-              </div>
+      <div className="container-fluid ">
+        <div
+          className="header-fixed"
+          style={{ width: "100%", backgroundColor: "#000" }}
+        >
+          <div className="headersection desktop-need">
+            <div className="col-3">
+              <div className="col-3 d-flex align-items-center ps-5">
+                            <img
+                              src={logo}
+                              alt="Logo"
+                              style={{
+                                width: "50px",
+                                height: "40px",
+                              }}
+                            />
+                            <p className="text-white m-0" style={{ fontSize: "30px" }}>
+                              RECYCHBS
+                            </p>
+                          </div>
             </div>
-            <div style={{ display: "flex", padding: "0 5px", marginLeft: "10px" }}>
-              <FaLocationDot
-                style={{
-                  color: "#fff",
-                  width: "20px",
-                  height: "20px",
-                  marginRight: "5px",
-                }}
-              />
-              <LocationDisplay />
+ 
+            <div className="col-6">
+            <div className="desktop-need-loc">
+             <div style={{display:"flex"}}>
+             <FaLocationDot
+              style={{
+                color: "#fff",
+                width: "20px",
+                height: "20px",
+                marginRight: "5px",
+              }}
+            />
+            <LocationDisplay />
+             </div>
+             {/* {shouldShowSearchBar && (
+                  <div>
+                    <CiSearch className="search-headerIcon" />
+                    <input
+                      type="text"
+                      placeholder="What are you looking for?"
+                      id="search-form"
+                      className="search-header"
+                    />
+                  </div>
+                )} */}
             </div>
-            <div style={{ display: "flex" }}>
-              <div
-                className="d-none d-md-block"
-                style={{ cursor: "pointer", marginLeft: "20px" }}
-                onClick={() => navigate("/Homeuser")}
-              >
+            </div>
+            <div className="col-3 d-flex flex-row justify-content-end">
+              <div className="col-2 d-flex flex-column align-items-center justify-content-center">
+                <div style={{cursor:"pointer"}} onClick={()=>navigate("/Homeuser")}>
                 <FaHome className="icons-bottom" />
+                </div>
               </div>
-              <div
-                className="d-none d-md-block"
-                style={{ cursor: "pointer", marginLeft: "20px" }}
-                onClick={() => navigate("/Userlogopage")}
-              >
+              <div className="col-2 d-flex flex-column align-items-center justify-content-center">
+                <div style={{cursor:"pointer"}} onClick={()=>navigate("/Userlogopage")}>
                 <FaUser className="icons-bottom" />
+                </div>
               </div>
-              <div style={{ position: "relative", marginLeft: "20px" }}>
-                <IoIosNotifications
-                  style={{
-                    height: "25px",
-                    width: "25px",
-                    cursor: "pointer",
-                    color: "#fff",
-                  }}
-                  onClick={() => navigate("/Usernotification")}
-                />
-                <span
-                  style={{
-                    position: "absolute",
-                    top: "-5px",
-                    right: "-5px",
-                    backgroundColor: "red",
-                    color: "white",
-                    borderRadius: "50%",
-                    width: "15px",
-                    height: "15px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "12px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  17
-                </span>
+ 
+              <div className="col-2 d-flex flex-column align-items-center justify-content-center">
+                <div style={{ position: "relative" }}>
+                  <IoIosNotifications
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      cursor: "pointer",
+                      color: "#fff",
+                    }}
+                    onClick={() => navigate("/Usernotification")}
+                  />
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: "-5px",
+                      right: "-5px",
+                      backgroundColor: "red",
+                      color: "white",
+                      borderRadius: "50%",
+                      width: "20px",
+                      height: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "12px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    17
+                  </span>
+                </div>
               </div>
-
               <div
-                className="d-none d-md-block"
-                style={{ cursor: "pointer", marginLeft: "20px" }}
+                className="col-2 d-flex  flex-column align-items-center justify-content-center"
                 onClick={toggleDrawer}
               >
-                <IoMenuSharp className="icons-bottom" />
+                <div style={{ cursor: "pointer" }} onClick={toggleDrawer}>
+                  <IoMenuSharp className="icons-bottom" />
+                </div>
               </div>
             </div>
           </div>
+          <div
+  className="headersection mobile-need header-fixed"
+  style={{ flexDirection: "column" }}
+  >
+  <div
+    className="p-2"
+    style={{
+      display: "flex",
+      width: "100%",
+      justifyContent: "space-between",
+      alignItems: "center",
+    }}
+  >
+    <div className="col-3 d-flex flex-column">
+      <img
+        src={logo}
+        alt="Logo"
+        style={{
+          width: "55px",
+          height: "45px",
+          marginLeft: "30px",
+          textAlign: "right", 
+        }}
+      />
+      
+    </div>
+    <div className="col-3 d-flex flex-column" style={{ width: "150px", }}>
+    <p
+      className="text-white m-0 ps-2"
+      style={{
+        fontSize: "20px", // Adjusted font size
+        fontWeight: "bold",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        maxWidth: "200px", // Adjusted max width
+        textAlign: "center", // Align text to the left
+      }}
+    >
+      RECYCHBS
+    </p>
+    </div>
+    <div className="col-3 d-flex align-items-center justify-content-center">
+      {/* <div class="form-check form-switch col-6 d-flex justify-content-end">
+        <input
+          className="form-check-input"
+          style={{ width: "50px", height: "25px", cursor: "pointer" }}
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+      </div> */}
+      <div className="col-6 d-flex justify-content-end">
+        <div style={{ position: "relative" }}>
+          <IoIosNotifications
+            style={{ height: "30px", width: "30px", cursor: "pointer", color: "#fff" }}
+            onClick={() => navigate("/Usernotification")}
+          />
+          <span
+            style={{
+              position: "absolute",
+              top: "-5px",
+              right: "-5px",
+              backgroundColor: "red",
+              color: "white",
+              borderRadius: "50%",
+              width: "20px",
+              height: "20px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "12px",
+              fontWeight: "bold",
+            }}
+          >
+            17
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="col-6" style={{ display: "flex", alignItems: "center", width: '85%'  }}>
+    <FaLocationDot
+      style={{
+        color: "#fff",
+        width: "20px",
+        height: "20px",
+        marginRight: "5px",
+        // marginTop: "-25px",
+      }}
+    />
+    <marquee behavior="scroll" direction="left" style={{ color: "#fff", width: '90%' }}>
+      <LocationDisplay />
+    </marquee>
+  </div>
+</div>
         </div>
         <div
-          className="bottom-fixed"
+          className=" bottom-fixed"
           style={{
             width: "100%",
             backgroundColor: "#000",
@@ -166,7 +255,7 @@ const Header = () => {
                 alignItems: "center",
                 cursor: "pointer",
               }}
-              onClick={() => navigate("/Homeuser")}
+              onClick={()=>navigate("/Homeuser")}
             >
               <FaHome className="icons-bottom" />
               <p className="icons-bottom-text p-0 m-0">Home</p>
@@ -181,7 +270,7 @@ const Header = () => {
                 alignItems: "center",
                 cursor: "pointer",
               }}
-              onClick={() => navigate("/Userlogopage")}
+              onClick={()=>navigate("/Userlogopage")}
             >
               <FaUser className="icons-bottom text-center" />
               <p className="icons-bottom-text p-0 m-0">User</p>
@@ -269,29 +358,58 @@ const Header = () => {
               </div>
               <div
                 className="drawer-menu"
-                onClick={() => navigate("/FAQ")}
+                onClick={() => navigate("/Userhelp")}
               >
+                <BiHelpCircle
+                  style={{ height: "20px", width: "20px", marginRight: "10px" }}
+                />
+                <span>Help</span>
+              </div>
+              <div className="drawer-menu" onClick={() => navigate("/Userfaq")}>
                 <FcFaq
                   style={{ height: "20px", width: "20px", marginRight: "10px" }}
                 />
-                <span>FAQ</span>
+                <span>FAQs</span>
               </div>
             </div>
           </div>
-          <div
-            className="drawer-menu"
-            style={{ cursor: "pointer" }}
-            onClick={handleLogout}
-          >
-            <LuLogOut
-              style={{ height: "20px", width: "20px", marginRight: "10px" }}
-            />
-            <span>Logout</span>
+          <div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "10px",
+                padding: "20px 20px",
+              }}
+            >
+              <LuLogOut
+                style={{ height: "20px", width: "20px", marginRight: "10px" }}
+              />
+              <span>LogOut</span>
+            </div>
           </div>
         </div>
+ 
+        {drawerOpen && (
+          <div
+            className="overlay"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0,0,0,0.5)",
+              zIndex: 500,
+            }}
+            onClick={toggleDrawer}
+          />
+        )}
       </div>
     </>
   );
 };
-
+ 
 export default Header;
+ 
+ 

@@ -22,7 +22,7 @@ const UserLocation = () => {
     }
   const updateLocation = (latitude, longitude) => {
     // fetch('http://127.0.0.1:8000/update-location/', {
-    fetch('https://recychbs-backend.onrender.com/update-location/', {
+    fetch('http://127.0.0.1:8000/update-location/', {
       method: 'POST',
       credentials: 'include',
       headers: {

@@ -66,7 +66,7 @@ const Bookdealer = () => {
 
     const csrfToken = getCookie("csrftoken");
 
-    fetch('https://recychbs-backend.onrender.com/bookdealer/', {
+    fetch('http://127.0.0.1:8000/bookdealer/', {
       credentials: 'include',
       method: 'POST',
       body: JSON.stringify(answer),

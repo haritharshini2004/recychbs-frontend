@@ -118,7 +118,7 @@ const OtpVerification = () => {
     e.preventDefault();
     setTimer(30);
     setIsTimerActive(true);
-    fetch("https://recychbs-backend.onrender.com/resend-otp/", {
+    fetch("http://127.0.0.1:8000/resend-otp/", {
       credentials: "include",
       method: "POST",
       headers: {
@@ -147,7 +147,7 @@ const OtpVerification = () => {
     const enteredOtp = otp.join("");
     console.log("Otp Button Clicked");
     setLoading(true);
-    fetch("https://recychbs-backend.onrender.com/otp/", {
+    fetch("http://127.0.0.1:8000/otp/", {
       method: "POST",
       credentials: "include",
       headers: {

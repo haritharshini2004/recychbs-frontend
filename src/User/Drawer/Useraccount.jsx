@@ -8,7 +8,7 @@ const Useraccount = () => {
   const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
-    fetch('https://recychbs-backend.onrender.com/GetUserDetails/')
+    fetch('http://127.0.0.1:8000/GetUserDetails/')
       .then(response => response.json())
       .then(data => {
         console.log(data);

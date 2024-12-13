@@ -72,6 +72,7 @@ import NearbyUsers from './Dealer/nearbyUsers';
 import PhoneAuth from './screen/PhoneAuth';
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics as Ana } from "@vercel/analytics/react"
+import Headerdealer from './component/Headerdealer';
 
 
 function App() {
@@ -99,9 +100,9 @@ function App() {
 
           {/* ----------------------///DEALER////---------------------------- */}
           <Route path='/Homedealer' element={
-            // <ProtectedRoute requiredRole="DEALER">
+            <ProtectedRoute requiredRole="DEALER">
               <Homedealer />
-            // </ProtectedRoute>
+            </ProtectedRoute>
           } />
           <Route path='/Todayscrap' element={
             <ProtectedRoute requiredRole="DEALER">

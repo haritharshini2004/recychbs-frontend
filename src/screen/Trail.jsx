@@ -136,7 +136,7 @@ const Login = () => {
       loginType: activeLogin
     };
     setLoading(true);
-    fetch('https://recychbs-backend.onrender.com/login-form/', {
+    fetch('http://127.0.0.1:8000/login-form/', {
       method: 'POST',
       credentials: 'include',
       headers: {

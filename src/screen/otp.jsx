@@ -47,7 +47,7 @@
 //     e.preventDefault();
 //     const enteredOtp = otp.join("");
  
-//     fetch("https://recychbs-backend.onrender.com/otp/", {
+//     fetch("http://127.0.0.1:8000/otp/", {
 //       method: "POST",
 //       credentials: "include",
 //       headers: {

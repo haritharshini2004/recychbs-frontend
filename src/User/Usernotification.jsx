@@ -16,7 +16,7 @@ const Usernotification = () => {
   
   useEffect(() => {
     // fetch('http://127.0.0.1:8000/Get_UserNotification/')
-    fetch('https://recychbs-backend.onrender.com/Get_Notification/')
+    fetch('http://127.0.0.1:8000/Get_Notification/')
       .then(response => response.json())
       .then(data => {
         console.log(data);

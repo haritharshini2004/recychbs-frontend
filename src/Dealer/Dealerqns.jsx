@@ -47,7 +47,7 @@ const Dealerqns = () => {
   return (
   <>
   <Headerdealer/>
-    <div className='container-fluid topbottom-user'>
+    <div className='container-fluid topbottom'>
       
      
       <div style={{ marginBottom: '20px' }}>

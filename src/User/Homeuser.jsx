@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Header from "../component/Header";
-import logo from "../assets/image/istockphoto.jpg";
-import logo1 from "../assets/image/recyc.jpeg";
-import logo2 from "../assets/image/Designer.png";
+// import logo from "../assets/image/bg-fixed.jpg";
+// import logo1 from "../assets/image/recyc.jpeg";
+// import logo2 from "../assets/image/Designer.png";
+import logo from "../assets/image/banner.jpg";
+import logo1 from "../assets/image/banner1.jpg";
+import logo2 from "../assets/image/banner2.jpg";
 import bottle from "../assets/image/bottle.jpeg";
 import card from "../assets/image/card.jpeg";
 import cocount from "../assets/image/cocount.jpeg";
@@ -48,7 +51,7 @@ function Homeuser() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://recychbs-backend.onrender.com/User_Scrap_Type/')
+    fetch('http://127.0.0.1:8000/User_Scrap_Type/')
       .then(response => response.json())
       .then(data =>{ 
         setData(data);
@@ -199,7 +202,8 @@ console.log(items);
         <div class="ring"></div>
         <button
           onClick={() => navigate("/Scrapselect")}
-        >
+          style={{ fontFamily: "Vollkorn, serif" }}
+          >
           Book Dealer
         </button>
       </div>

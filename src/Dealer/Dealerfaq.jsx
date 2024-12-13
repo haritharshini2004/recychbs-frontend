@@ -4,18 +4,33 @@ import Headerdealer from '../component/Headerdealer';
  
 const faqsData = [
   {
-    question: "What is React?",
-    answer: "React is a JavaScript library for building user interfaces. It allows developers to build single-page applications with a component-based architecture.",
+    question: "What types of scrap do you collect?",
+    answer: "We collect a variety of scrap materials including metal, paper, plastic, and electronic waste. Please check our website for a full list of accepted materials.",
   },
   {
-    question: "How do I create a new React app?",
-    answer: "You can create a new React app using Create React App by running 'npx create-react-app my-app' in your terminal.",
+    question: "How does the scrap collection process work?",
+    answer: "You can schedule a scrap collection through our website. Simply fill out the form with your details, and our team will contact you to arrange a pickup time.",
   },
   {
-    question: "What is a component in React?",
-    answer: "A component in React is a reusable piece of UI that can be used to build your application. Components can be either class-based or functional.",
+    question: "Is there a fee for scrap collection?",
+    answer: "No, our scrap collection service is free of charge. We aim to promote recycling and sustainability in our community.",
   },
- 
+  {
+    question: "What should I do with hazardous materials?",
+    answer: "Hazardous materials such as batteries, chemicals, and certain electronics require special handling. Please contact us for guidance on how to dispose of these items safely.",
+  },
+  {
+    question: "How can I track my scrap collection request?",
+    answer: "Once you schedule a collection, you will receive a confirmation email with a tracking link. You can use this link to monitor the status of your request.",
+  },
+  {
+    question: "Do you offer recycling services for businesses?",
+    answer: "Yes, we offer tailored recycling solutions for businesses. Please contact us directly to discuss your specific needs and how we can assist you.",
+  },
+  {
+    question: "How can I contact customer support?",
+    answer: "You can reach our customer support team via the contact form on our website, or by calling our support hotline. We are here to help you with any inquiries.",
+  },
 ];
  
 const FAQItem = ({ question, answer }) => {
@@ -65,7 +80,7 @@ const Dealerfaq = () => {
   return (
    <>
    <Headerdealer/>
-   <div className='topbottom-user'>
+   <div className='container-fluid topbottom'>
       <h1>Frequently Asked Questions</h1>
       {faqsData.map((faq, index) => (
         <FAQItem key={index} question={faq.question} answer={faq.answer} />
