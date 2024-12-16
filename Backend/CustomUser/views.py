@@ -261,7 +261,7 @@ def send_extraData(request):
 def otp_send(request):
     # validated = request.session['validated'] 
     # if validated:
-    try:
+    # try:
         if request.method == 'POST':
             # Prompt user to enter the OTP
             register_data = request.session['data']
@@ -405,14 +405,13 @@ def otp_send(request):
                     # Compare the entered OTP with the generated OTP
                 data = json.loads(request.body)
                 entered_otp = data.get('enteredOtp')
-                print("Entered String  OTP -",entered_otp)
-
 
                 otp = request.session.get('otp')
                 # resend_otp = request.session['resend_otp']
         
                 print("Generated OTP -",otp)
                 print("Generated String  OTP -",str(otp))
+                print("Entered String  OTP -",entered_otp)
 
                 if str(otp)  == entered_otp:
                     print("OTP verification successful!")
@@ -465,8 +464,8 @@ def otp_send(request):
                 )
 
             return JsonResponse({'message': 'User registered successfully'}, status=201)
-    except Exception as e:
-        print("Exeption is :", e)
+    # except Exception as e:
+        # print("Exeption is :", e)
         connection.close()
 
         return JsonResponse({"error":"Invalid Method!"},status=405)

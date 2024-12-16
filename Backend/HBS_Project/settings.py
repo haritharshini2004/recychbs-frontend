@@ -74,16 +74,6 @@ REST_FRAMEWORK = {
     ],
 }
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Default: use database for session storage
-
-# Important for allowing cross-origin cookies to be shared:
-SESSION_COOKIE_SAMESITE = None  # Allow the session cookie to be shared across different origins
-SESSION_COOKIE_SECURE = False  # Set to True in production when using HTTPS
-CORS_ALLOW_CREDENTIALS = True# settings.py
-SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
-# Set session to expire after a certain number of seconds
-SESSION_COOKIE_AGE = 1209600  # 2 weeks, default is 1209600 seconds
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Keep session active even after browser close
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 ROOT_URLCONF = 'HBS_Project.urls'
