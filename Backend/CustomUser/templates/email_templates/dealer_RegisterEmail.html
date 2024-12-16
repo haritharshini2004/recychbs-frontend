@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to RECYCHBS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .header img {
+            width: 100px;
+            height: auto;
+        }
+        .body {
+            padding: 20px;
+        }
+        .body h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        .body p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 18px;
+            color: #2c3e50;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .images {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .images img {
+            width: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="email-container">
+        <!-- Header Section with Logo -->
+        <div class="header">
+            <img src="https://s3.eu-north-1.amazonaws.com/recychbs.images/email_assets/logotrans.png" alt="RECYCHBS Logo">
+            <h2>Welcome to RECYCHBS!</h2>
+        </div>
+
+        <!-- Body Content -->
+        <div class="body">
+            <h1>Successful Registration!</h1>
+            <p>Dear {{dealer_name}},</p>
+
+            <p>We are thrilled to welcome you to RECYCHBS! Your registration has been successfully completed, and you are now part of our trusted network of scrap dealers.</p>
+
+            <!-- Quote 1 -->
+            <p class="quote">"The greatest threat to our planet is the belief that someone else will save it."</p>
+
+
+            <p>With RECYCHBS, you’ll be able to receive scrap collection orders from users in your area, making it easier to grow your business while contributing to environmental sustainability.</p>
+
+            <!-- Quote 2 -->
+            <p class="quote">"Recycling turns things into other things, which is like magic."</p>
+
+            <p>We are excited to have you on board and look forward to working with you to create a cleaner, greener community!</p>
+
+            <a href="https://www.recychbsadmin.in/" class="button">Get Started</a>
+        </div>
+
+        <!-- Recycling & Scrap Images -->
+        <div class="images">
+            <img src="https://s3.eu-north-1.amazonaws.com/recychbs.images/email_assets/recyc.jpeg" alt="Recycling Image ">
+            <img src="https://s3.eu-north-1.amazonaws.com/recychbs.images/email_assets/scrap.jpeg" alt="Scrap Image 1">
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>Need help? <a href="mailto:support@recychbs.com">Contact Support</a></p>
+            <p>© 2024 RECYCHBS. All rights reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>

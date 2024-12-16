@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Registration Form</title>
+</head>
+<body>
+
+    <h2>Register</h2>
+    <form method="post" >
+        {% csrf_token %}
+        {% if form.errors %}
+            <p>Please correct the errors below.</p>
+        {% endif %}
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="username">Phone No</label><br>
+        <input type="text" id="username" name="phone" required><br><br>
+
+        <label for="username">Address</label><br>
+        <input type="text" id="username" name="address" required><br><br>
+
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required ><br><br>
+
+        <label for="password1">Password</label><br>
+        <input type="password" id="password1" name="password1" required><br><br>
+
+        <label for="password2">Confirm Password</label><br>
+        <input type="password" id="password2" name="password2" required><br><br>
+        {% if signup_error %}
+                    {% for message in signup_error %}
+                <h6 id="error_message">{{message}}</h6>
+                {% endfor%}
+                {%  endif %}
+
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+</html>
