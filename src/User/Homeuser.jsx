@@ -51,7 +51,7 @@ function Homeuser() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/User_Scrap_Type/')
+    fetch('https://recychbs-7f558d40e2a6.herokuapp.com/User_Scrap_Type/')
       .then(response => response.json())
       .then(data =>{ 
         setData(data);

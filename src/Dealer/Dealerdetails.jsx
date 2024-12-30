@@ -438,8 +438,8 @@ for (const [key, fileData] of Object.entries(filesData)) {
     try {
       // Send the form data to the server
       const response = await fetch(
-        "http://127.0.0.1:8000/dealer_details/",
-        // "http://127.0.0.1:8000/dealer_details/",
+        "https://recychbs-7f558d40e2a6.herokuapp.com/dealer_details/",
+        // "https://recychbs-7f558d40e2a6.herokuapp.com/dealer_details/",
         {
           method: "POST",
           body: uploadFile,

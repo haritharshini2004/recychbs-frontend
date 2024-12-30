@@ -15,8 +15,8 @@ const Usernotification = () => {
   // console.log(userDetails);
   
   useEffect(() => {
-    // fetch('http://127.0.0.1:8000/Get_UserNotification/')
-    fetch('http://127.0.0.1:8000/Get_Notification/')
+    // fetch('https://recychbs-7f558d40e2a6.herokuapp.com/Get_UserNotification/')
+    fetch('https://recychbs-7f558d40e2a6.herokuapp.com/Get_Notification/')
       .then(response => response.json())
       .then(data => {
         console.log(data);

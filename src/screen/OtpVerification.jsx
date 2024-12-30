@@ -118,7 +118,7 @@ const OtpVerification = () => {
     e.preventDefault();
     setTimer(30);
     setIsTimerActive(true);
-    fetch("http://127.0.0.1:8000/resend-otp/", {
+    fetch("https://recychbs-7f558d40e2a6.herokuapp.com/resend-otp/", {
       credentials: "include",
       method: "POST",
       headers: {
@@ -147,7 +147,7 @@ const OtpVerification = () => {
     const enteredOtp = otp.join("");
     console.log("Otp Button Clicked");
     setLoading(true);
-    fetch("http://127.0.0.1:8000/otp/", {
+    fetch("https://recychbs-7f558d40e2a6.herokuapp.com/otp/", {
       method: "POST",
       credentials: "include",
       headers: {

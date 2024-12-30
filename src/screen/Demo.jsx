@@ -287,8 +287,8 @@ export default Demo;
 //   loginType: activeLogin // Add secondVariable as a new field
 // };
  
-//     fetch('http://127.0.0.1:8000/login-form/', {
-//       // fetch('http://127.0.0.1:8000/login-form/ ', {
+//     fetch('https://recychbs-7f558d40e2a6.herokuapp.com/login-form/', {
+//       // fetch('https://recychbs-7f558d40e2a6.herokuapp.com/login-form/ ', {
  
 //         method: 'POST',
 //         credentials: 'include', // Ensures cookies are sent

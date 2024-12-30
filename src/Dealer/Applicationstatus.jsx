@@ -85,8 +85,8 @@ const Applicationstatus = () => {
           // Fetch status from Django when the component loads
           const fetchStatus = async () => {
             try {
-              const response = await fetch('http://127.0.0.1:8000/FetchStatusActive/',{
-            // const response = await fetch('http://127.0.0.1:8000/FetchStatusActive/ ', {
+              const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/FetchStatusActive/',{
+            // const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/FetchStatusActive/ ', {
               credentials: 'include', // Ensures cookies are sent
               'X-CSRFToken':csrfToken
               }); // Django API endpoint
@@ -136,7 +136,7 @@ const handleSubmit = async () => {
   uploadFile.append('message', message);
 
   try {
-    const response = await fetch('http://127.0.0.1:8000/send_extraData/', {
+    const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/send_extraData/', {
       method: 'POST',
       body: uploadFile,
       credentials: 'include',

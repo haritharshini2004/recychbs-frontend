@@ -47,7 +47,7 @@
 //     e.preventDefault();
 //     const enteredOtp = otp.join("");
  
-//     fetch("http://127.0.0.1:8000/otp/", {
+//     fetch("https://recychbs-7f558d40e2a6.herokuapp.com/otp/", {
 //       method: "POST",
 //       credentials: "include",
 //       headers: {

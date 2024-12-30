@@ -21,8 +21,8 @@ const UserLocation = () => {
     return cookieValue;
     }
   const updateLocation = (latitude, longitude) => {
-    // fetch('http://127.0.0.1:8000/update-location/', {
-    fetch('http://127.0.0.1:8000/update-location/', {
+    // fetch('https://recychbs-7f558d40e2a6.herokuapp.com/update-location/', {
+    fetch('https://recychbs-7f558d40e2a6.herokuapp.com/update-location/', {
       method: 'POST',
       credentials: 'include',
       headers: {

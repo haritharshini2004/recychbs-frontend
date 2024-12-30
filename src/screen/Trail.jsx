@@ -136,7 +136,7 @@ const Login = () => {
       loginType: activeLogin
     };
     setLoading(true);
-    fetch('http://127.0.0.1:8000/login-form/', {
+    fetch('https://recychbs-7f558d40e2a6.herokuapp.com/login-form/', {
       method: 'POST',
       credentials: 'include',
       headers: {

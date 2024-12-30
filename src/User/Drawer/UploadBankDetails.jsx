@@ -41,7 +41,7 @@ function BankAccountDetails() {
 
     try {
     //   const response = await fetch('http://localhost:8000/update-bank-account/', {
-      const response = await fetch('http://127.0.0.1:8000/update-bank-account/', {
+      const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/update-bank-account/', {
         method: 'POST',
         body: formData,  // Send FormData
       });

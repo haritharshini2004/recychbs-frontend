@@ -30,8 +30,8 @@ const Forgotpassword = () => {
     }
     return cookieValue;
   }
-      const response = await fetch('http://127.0.0.1:8000/password-reset/', {
-      // const response = await fetch('http://127.0.0.1:8000/password-reset/', {
+      const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/password-reset/', {
+      // const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/password-reset/', {
         method: 'POST',
         credentials: 'include',
         headers: {

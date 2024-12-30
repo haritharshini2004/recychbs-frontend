@@ -31,7 +31,7 @@ const Dealereditdetail = () => {
         return cookieValue;
     }
     try {
-      const response = await fetch('http://127.0.0.1:8000/updateDealerDetails/', {
+      const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/updateDealerDetails/', {
         method: 'POST', // or 'PUT' depending on your backend logic
         credentials: "include",
         headers: {
@@ -60,7 +60,7 @@ const Dealereditdetail = () => {
   useEffect(() => {
     const fetchDealerDetails = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/fetchDealerEditDetails/');
+        const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/fetchDealerEditDetails/');
         const dealer_data = await response.json();
         
         const data = {

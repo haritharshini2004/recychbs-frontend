@@ -24,8 +24,8 @@ const NearbyUsers = () => {
     useEffect(() => {
         const fetchNearbyUsers = async () => {
             try {
-                // const response = await fetch('http://127.0.0.1:8000/nearby-users/', {
-                const response = await fetch('http://127.0.0.1:8000/nearbyUsers/', {
+                // const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/nearby-users/', {
+                const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/nearbyUsers/', {
                     credentials: 'include',
                     headers: {
                       'Content-Type': 'application/json',

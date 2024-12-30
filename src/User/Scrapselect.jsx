@@ -15,7 +15,7 @@
 //   const navigate = useNavigate();
 
 //   useEffect(() => {
-//     fetch('http://127.0.0.1:8000/SelectScrap/')
+//     fetch('https://recychbs-7f558d40e2a6.herokuapp.com/SelectScrap/')
 //       .then(response => response.json())
 //       .then(data => setData(data))
 //       .catch(error => console.error('Error fetching data:', error));
@@ -60,7 +60,7 @@
 //     const csrfToken = getCookie('csrftoken');
 
 //     try {
-//       const response = await fetch('http://127.0.0.1:8000/ScrapSelection/', {
+//       const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/ScrapSelection/', {
 //         method: "POST",
 //         body: formData,
 //         credentials: "include",
@@ -193,7 +193,7 @@ const Scrapselect = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/User_Scrap_Type/')
+    fetch('https://recychbs-7f558d40e2a6.herokuapp.com/User_Scrap_Type/')
       .then(response => response.json())
       .then(data =>{ 
         setData(data);
@@ -344,7 +344,7 @@ console.log(scrapDetail);
       // Send the form data to the server
       const response = await fetch(
         // 'http://localhost:8000/ScrapSelection/',
-        'http://127.0.0.1:8000/ScrapSelection/',
+        'https://recychbs-7f558d40e2a6.herokuapp.com/ScrapSelection/',
         {
           method: "POST",
           body: formData,

@@ -8,7 +8,7 @@ const Useraccount = () => {
   const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/GetUserDetails/')
+    fetch('https://recychbs-7f558d40e2a6.herokuapp.com/GetUserDetails/')
       .then(response => response.json())
       .then(data => {
         console.log(data);
