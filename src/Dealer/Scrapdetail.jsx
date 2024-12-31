@@ -33,7 +33,31 @@ function Scrapdetail() {
     "Quality 2": "Average",
     "Quality 3": "Bad",
   };
+  const buttonStyle = {
+    display: "inline-flex",
+    marginLeft: '8px',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#28a745", // Green background
+    color: "#fff",             // White text
+    border: "none",
+    borderRadius: "50%",        // Makes it round
+    width: "40px",              // Equal width and height
+    height: "40px",             // Equal width and height
+    fontSize: "20px",
+    cursor: "pointer",
+    transition: "background-color 0.3s ease",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  };
+  
 
+  const hoverStyle = {
+    backgroundColor: "#218838", // Darker green on hover
+  };
+
+  const activeStyle = {
+    backgroundColor: "#1e7e34", // Even darker green when clicked
+  };
   useEffect(() => {
     localStorage.removeItem('orderData');
   }, []);
@@ -178,7 +202,7 @@ function Scrapdetail() {
             </div>
             <div className="otp-display col-12 col-lg-4 col-md-12 col-sm-12">
               <div className="otp-box">
-                <p>Your OTP is:</p>
+                <p>Enter OTP</p>
                 {otp.map((digit, index) => (
                   <input
                     key={index}
@@ -191,10 +215,22 @@ function Scrapdetail() {
                       width: "40px",
                       height: "40px",
                       textAlign: "center",
-                      margin: "0 5px",
+                      margin: "0 4px",
+                      border: "1px solid #ccc",
+                      borderRadius: "5px",
+                      fontSize: "18px",
                     }}
                   />
                 ))}
+                 <button
+                style={buttonStyle}
+                onMouseOver={(e) => e.target.style.backgroundColor = hoverStyle.backgroundColor}
+                onMouseOut={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}
+                onMouseDown={(e) => e.target.style.backgroundColor = activeStyle.backgroundColor}
+                onMouseUp={(e) => e.target.style.backgroundColor = hoverStyle.backgroundColor}
+              >
+                ✓
+              </button>
               </div>
             </div>
           </div>
