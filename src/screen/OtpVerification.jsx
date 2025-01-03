@@ -14,7 +14,7 @@ const OtpVerification = () => {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-   const [alertType, setAlertType] = useState('');
+  const [alertType, setAlertType] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
   const [sAlert, setShowAlert] = useState(false);
 
@@ -135,10 +135,12 @@ const OtpVerification = () => {
       .then((data) => {
         if (data.message) {
           console.log(data.message);
+          displayAlert('sucess', 'OTP sent');
         }
       })
       .catch((error) => {
         console.error("Error:", error);
+        displayAlert('error', 'Error to send OTP');
       });
   };
 
@@ -159,7 +161,7 @@ const OtpVerification = () => {
       .then((response) => {
         if (response.ok) {
           sessionStorage.setItem('otpSession', 'completed');
-          displayAlert('success', 'Registered successfully');
+          displayAlert('success', 'OTP verifed & registered successfully');
           setTimeout(() => {
             navigate("/Login");
           }, 2000);
@@ -173,6 +175,7 @@ const OtpVerification = () => {
       })
       .catch((error) => {
         console.log("Error:", error);
+        displayAlert('error', 'OTP verification faild.');
       })
       .finally(() => {
         setLoading(false); // Set loading to false when API call is complete

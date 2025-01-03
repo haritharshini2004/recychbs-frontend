@@ -78,7 +78,7 @@
 }
 
 .table-sorting .dataTables_paginate {
-    padding: 5px;
+    padding: 1px;
     text-align: right;
     float: right;
 }

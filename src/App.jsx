@@ -70,6 +70,7 @@ import Base64Testing2 from './Dealer/Base64Testing2';
 import LocationTesting from './Dealer/locationTesting';
 import NearbyUsers from './Dealer/nearbyUsers';
 import PhoneAuth from './screen/PhoneAuth';
+import Orders from './Dealer/Orders';
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics as Ana } from "@vercel/analytics/react"
 import Headerdealer from './component/Headerdealer';
@@ -122,6 +123,11 @@ function App() {
           <Route path='/Completeorder' element={
             <ProtectedRoute requiredRole="DEALER">
               <Completeorder />
+            </ProtectedRoute>
+          } />
+          <Route path='/Orders' element={
+            <ProtectedRoute requiredRole="DEALER">
+              <Orders />
             </ProtectedRoute>
           } />
           <Route path='/Completeorderdetail' element={
