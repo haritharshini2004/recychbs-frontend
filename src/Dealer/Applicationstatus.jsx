@@ -52,11 +52,27 @@ const Applicationstatus = () => {
 
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
-    setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
-    if (event.target.files.length > 0) {
+    const validFormats = [
+      'image/jpeg', 
+      'image/png', 
+      'application/pdf', 
+      'application/msword', 
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ];
+
+    // Filter valid files based on their types
+    const validFiles = selectedFiles.filter(file => validFormats.includes(file.type));
+
+    // If there are invalid files, set the error message
+    if (selectedFiles.length > 0 && validFiles.length === 0) {
+      setError('Unsupported file type. Please upload JPG, PNG, PDF, DOC, or DOCX files.');
+    } else {
+      // If there are valid files, reset error and add them to the files array
       setError('');
+      setFiles((prevFiles) => [...prevFiles, ...validFiles]);
     }
   };
+  
 
  
   const handleRemoveFile = (fileName) => {
@@ -126,15 +142,14 @@ const handleSubmit = async () => {
     return; // Prevent submission
   }
   setShowRequirementMessage(false);
-  setStatus('waiting');
-  displayAlert('success', 'Data Uploaded');
+  
 
   const uploadFile = new FormData();
   files.forEach((file, index) => {
     uploadFile.append(`file${index}`, file);
   });
   uploadFile.append('message', message);
-
+  displayAlert('loading', 'Uploading, please wait...');
   try {
     const response = await fetch('https://recychbs-7f558d40e2a6.herokuapp.com/send_extraData/', {
       method: 'POST',
@@ -147,13 +162,17 @@ const handleSubmit = async () => {
     if (response.ok) {
       const data = await response.json();
       console.log("Response is OK");
+      setStatus('waiting');
+      displayAlert('success', 'Data Uploaded');
     } else {
       const data = await response.json();
       console.log("Response is not OK");
+      displayAlert('error', 'Failed to upload the data');
       setError(data.error);
     }
   } catch (error) {
     console.error('Error submitting data:', error);
+    displayAlert('error', 'Error submitting data');
   }
 
   setFiles([]);
@@ -275,6 +294,7 @@ const handleSubmit = async () => {
                  id="file-upload"
                  multiple
                  onChange={handleFileChange}
+                 accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" 
                  style={{
                    position: "absolute",
                    width: "100%",
@@ -303,22 +323,23 @@ const handleSubmit = async () => {
                </label>
              </div>
              <div style={{ marginTop: "20px" }}>
-               {files.length > 0 && (
-                 <ul>
-                   {files.map((file, index) => (
-                     <li key={index}>
-                       {file.name}
-                       <button
-                         onClick={() => handleRemoveFile(file.name)}
-  className="application-button"
-                       >
-                         Remove
-                       </button>
-                     </li>
-                   ))}
-                 </ul>
-               )}
-             </div>
+                {files.length > 0 && (
+                  <ul>
+                    {files.map((file, index) => (
+                      <li key={index}>
+                        {file.name}
+                        <button
+                          onClick={() => handleRemoveFile(file.name)}
+                          className="application-button"
+                          style={{ marginTop: "10px" }}
+                        >
+                          Remove
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
              {error && <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
              <div className="d-flex justify-content-center mt-5">
                <button className="application-button" onClick={handleSubmit}>

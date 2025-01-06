@@ -248,48 +248,55 @@ const handleFileChange = (fileType) => (e) => {
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
   ];
 
-  setFileNames((prevFileNames) => ({
-    ...prevFileNames,
-    [fileType]: file ? file : null,
+  // Reset any existing errors for the specific file type
+  setErrors((prevErrors) => ({
+    ...prevErrors,
+    [fileType]: '', // Clear previous error
   }));
 
-  // Clear the error for the specific file type
-  if (file) {
-    if (!validFormats.includes(file.type)) {
-      // Set an error message if the file type is invalid
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        [fileType]: 'Invalid file format. Please upload JPG, PNG, PDF, or DOC.',
-      }));
-      return;
-    } else {
-      // Clear the error if the file format is valid
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        [fileType]: "", // Clear error message for the specific file type
-      }));
-    }
-  } else {
-    // Optional: Handle the case where no file is selected
+  // Handle case when no file is selected
+  if (!file) {
+    setFileNames((prevFileNames) => ({
+      ...prevFileNames,
+      [fileType]: null, // Clear the file name
+    }));
     setErrors((prevErrors) => ({
       ...prevErrors,
-      [fileType]: "No file selected.",
+      [fileType]: 'No file selected.',
     }));
+    return;
   }
 
-  if (file) {
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-      setFilesData(prevData => ({
-        ...prevData,
-        [fileType]: { base64: base64String, file_name: file.name }  // Update the base64 and name for this field
-      }));
-    };
-
-    reader.readAsDataURL(file);  // Convert file to base64
+  // Validate the file format
+  if (!validFormats.includes(file.type)) {
+    setFileNames((prevFileNames) => ({
+      ...prevFileNames,
+      [fileType]: null, // Clear the invalid file
+    }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [fileType]: 'Invalid file format. Please upload JPG, PNG, PDF, DOC, or DOCX.',
+    }));
+    return;
   }
+
+  // If the file is valid, update the file name and base64 data
+  setFileNames((prevFileNames) => ({
+    ...prevFileNames,
+    [fileType]: file,
+  }));
+
+  // Read the file as base64 and update the file data
+  const reader = new FileReader();
+  reader.onloadend = () => {
+    const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+    setFilesData((prevData) => ({
+      ...prevData,
+      [fileType]: { base64: base64String, file_name: file.name }, // Update the base64 and name for this field
+    }));
+  };
+  
+  reader.readAsDataURL(file);  // Convert the file to base64
 };
 
 
@@ -394,6 +401,7 @@ const handleFileChange = (fileType) => (e) => {
       return;
     }
     setLoading(true);
+    displayAlert('loading', 'Uploading, please wait...');
 
     const uploadFile = new FormData();
 
@@ -418,7 +426,6 @@ for (const [key, fileData] of Object.entries(filesData)) {
 
 
     const csrfToken = getCookie("csrftoken");
-    displayAlert('loading', 'Uploading, please wait...');
 
     function getCookie(name) {
       let cookieValue = null;
@@ -465,10 +472,12 @@ for (const [key, fileData] of Object.entries(filesData)) {
       } else {
         const data = await response.json();
         console.log("Not Submited");
+        displayAlert('error', 'Failed to submit the dealer details');
         setError(data.error);
       }
     } catch (error) {
       console.error("Error:", error);
+      displayAlert('error', 'Failed to submit the dealer details');
     } finally {
       setLoading(false); // Reset loading state after the submission completes
     }
@@ -713,7 +722,7 @@ const getStepTitle = (step) => {
               </p>
               <p style={{ fontSize: "15px", marginTop: "10px",  color: fileNames.aadharfront ? "green" : "black"}}>
                 Selected file:{" "}
-                {fileNames.aadharfront ? fileNames.aadharfront.name : "No file selected"}
+                {fileNames.aadharfront && fileNames.aadharfront.name ? fileNames.aadharfront.name : "No file selected"}
               </p>
               <p className="error-warning">{errors.aadharfront}</p>
 
@@ -1292,10 +1301,14 @@ const getStepTitle = (step) => {
           </div>
           {message && <p style={{ color: "green" }}>{message}</p>}
           {error && <p style={{ color: "red" }}>{error}</p>}
-              <div onClick={handleSubmit} className="submit-button1">
+              <div onClick={handleSubmit} 
+               className={`submit-button1 ${loading ? "disabled" : ""}`} 
+               style={{ cursor: loading ? "not-allowed" : "pointer" }}>
                 Submit
               </div>
-              <div onClick={handlePrevStep} className="submit-button1">
+              <div onClick={handlePrevStep} 
+              className={`submit-button1 ${loading ? "disabled" : ""}`} 
+              style={{ cursor: loading ? "not-allowed" : "pointer" }}>
                 Previous
               </div>
             </div>

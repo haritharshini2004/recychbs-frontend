@@ -26,15 +26,15 @@ const Alert = ({ type, message, onClose }) => {
     if (type === 'loading') {
       const timer = setTimeout(() => {
         setIsExiting(true);
-        setTimeout(onClose, 500); // Wait for the exit animation
-      }, 300000); // Keep loading for 3 seconds
+        setTimeout(onClose, 500); 
+      }, 300000); 
 
       return () => clearTimeout(timer);
     } else if (type !== 'loading') {
       const timer = setTimeout(() => {
         setIsExiting(true);
-        setTimeout(onClose, 500); // Wait for the exit animation
-      }, 2000); // Auto dismiss after 3 seconds
+        setTimeout(onClose, 500); 
+      }, 2000); 
 
       return () => clearTimeout(timer);
     }
@@ -51,7 +51,7 @@ const Alert = ({ type, message, onClose }) => {
       {type !== 'loading' && (
         <button className="alert-close" onClick={() => {
           setIsExiting(true);
-          setTimeout(onClose, 500); // Wait for the exit animation
+          setTimeout(onClose, 500); 
         }}>
           &times;
         </button>

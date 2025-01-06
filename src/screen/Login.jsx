@@ -255,10 +255,10 @@ const handleBlur = (e) => {
   })
   .catch(error => {
     console.log("Error:", error);
-  });
-    // .finally(() => {
+  })
+    .finally(() => {
       setLoading(false); // Set loading to false when API call is complete
-    // });
+    });
   
     // Perform validation and error handling as needed
     const role = activeLogin.toLowerCase();
@@ -371,7 +371,7 @@ const handleBlur = (e) => {
                     Forgot Password?
                   </a>
                   {/* {message && <p style={{ color: "green" }}>{message}</p>} */}
-                  {error && <p style={{ color: "red" }}>{error}</p>}
+                  {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
                   <button
                     type="submit"
                     style={{ textDecoration: "none" }}
@@ -450,7 +450,7 @@ const handleBlur = (e) => {
                     Forgot Password?
                   </a>
                   {/* {message && <p style={{ color: "green" }}>{message}</p>} */}
-                  {error && <p style={{ color: "red" }}>{error}</p>}
+                  {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
                   <button
                     type="submit"
                     style={{ textDecoration: "none" }}
